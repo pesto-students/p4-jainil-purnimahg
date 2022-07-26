@@ -1,0 +1,111 @@
+body {
+  margin: 0;
+  font-family: "Lato";
+}
+.vertical-menu {
+  z-index: 100;
+  width: 70px;
+  height: 100vh;
+  position: fixed;
+  vertical-align: top;
+  background-color: #eee;
+}
+
+.vertical-menu a {
+  position: relative;
+  z-index: 50;
+  color: black;
+  display: block;
+  padding: 30%;
+  text-decoration: none;
+  text-align: center;
+  margin: 17px 0 17px 0;
+}
+.vertical-menu .icon {
+  height: 1.5rem;
+  justify-content: center;
+}
+.vertical-menu a:hover {
+  background-color: #ccc;
+}
+.disp {
+  position: relative;
+  z-index: 50;
+  background-color: #373434;
+  display: flex;
+}
+.catty-img{
+  margin-bottom: 3%;
+  margin-top: 3%;
+  margin-left: 10%;
+  padding: 2%;
+  height: 18rem;
+}
+.disp-desc {
+  color: white;
+  padding-top: 7%;
+  margin: 0;
+}
+.disp-desc h1 {
+  font-weight: 200;
+  font-size: 1.5rem;
+  margin: 1% 0px 0px 10%;
+  padding-bottom: 3%;
+}
+.disp-desc p{
+    margin: 0px 0px 0px 50px;
+    font-size: 0.8rem;
+    font-family: inherit;
+}
+.icon-disp-opt {
+    color: white !important;
+    margin-top: 8%;
+    display: inline-block;
+    padding-right: 1% !important;
+    padding-left: 0% !important;
+    margin-right: 0;
+    margin-left: 9%;
+}
+.icon-disp-opt img {
+  height: 1rem;
+  padding-right: 5px;
+}
+.list {
+  position: relative;
+  left: 70px;
+}
+.list tr {
+  font-size: 10px;
+}
+.list a {
+  color: blue;
+  font-weight: bold;
+  text-decoration: none;
+}
+.player {
+    z-index: 100;
+    bottom: 0%;
+    display: flex;
+    background-color: #3f62a8;
+    position: fixed;
+    height: 7rem;
+    width: 100%;
+    padding-top: 17px;
+    padding-left: 20px;
+}
+.player .plimg{
+  height: 5rem;
+  padding: 5px 0 5px 0;
+  justify-content: center;
+}
+.player p{
+  margin: 5px 300px 10px 10px;
+  height: 30px;
+  width: 120px;
+  color: white;
+}
+.player .icon{
+  height: 1rem;
+  justify-content: flex-end;
+  margin-top: 30px;
+}
