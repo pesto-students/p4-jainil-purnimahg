@@ -1,0 +1,83 @@
+body {
+  background-color: #2088d0;
+  color: white;
+  font-family: Montserrat;
+  margin: 0;
+}
+header {
+  background-color: white;
+  margin: 0;
+  height: 100px;
+  width: 100%;
+}
+header img {
+  margin-left: 10%;
+  height: 100px;
+  width: 200px;
+}
+.disc {
+  display: flex;
+    height: 500px;
+    justify-content: flex-end;
+    vertical-align: middle;
+    flex-direction: row;
+    align-items: center;
+}
+.disc h1 {
+   font-size: 50px;
+    width: 400px;
+    text-align: right;
+    margin-right: 10%;
+}
+.articles {
+  flex-direction: column;
+  flex-wrap: wrap;
+  display: flex;
+  height: 500px;
+  padding: 100px;
+}
+.art {
+  margin: 25px;
+    flex: auto;
+    width: 250px !important;
+    border-radius: 2%;
+    text-align: center;
+    width: 220px;
+    background-color: white;
+    color: #2088d0;
+    padding: 25px;
+    height: 350px;
+}
+button {
+  border: 0;
+    height: 50px;
+    width: 100px;
+    background-color: #2088d0;
+    border-radius: 10%;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+a {
+  color: white;
+  font-size: 15px;
+  font-weight: 600;
+  font-family: Montserrat;
+  text-decoration: none;
+}
+.art p{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+footer {
+    display: flex;
+    height: 50px;
+    margin: auto 0 20px 0;
+    z-index: 200;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    position: static;
+}
+i {
+  padding: 20px;
+}
