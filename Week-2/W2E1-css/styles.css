@@ -1,72 +1,72 @@
 body {
-  background-color: #2088d0;
-  color: white;
-  font-family: Montserrat;
-  margin: 0;
-}
-header {
-  background-color: white;
-  margin: 0;
-  height: 100px;
-  width: 100%;
-}
-header img {
-  margin-left: 10%;
-  height: 100px;
-  width: 200px;
+    background-color: #2088d0;
+    color: white;
+    font-family: Montserrat;
+    margin: 0;
 }
 .disc {
-  display: flex;
-    height: 500px;
-    justify-content: flex-end;
+  background-color: white;
+  color: #2088d0;
+    display: flex;
+    height: 250px;
+    justify-content: center;
     vertical-align: middle;
     flex-direction: row;
     align-items: center;
 }
 .disc h1 {
-   font-size: 50px;
-    width: 400px;
-    text-align: right;
-    margin-right: 10%;
+    font-size: 45px;
+    width: 500px;
+    text-align: center;
+    margin-right: 0;
 }
 .articles {
-  flex-direction: column;
+  justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
   display: flex;
-  height: 500px;
-  padding: 100px;
+  height: 390px;
 }
 .art {
-  margin: 25px;
-    flex: auto;
-    width: 250px !important;
-    border-radius: 2%;
-    text-align: center;
-    width: 220px;
-    background-color: white;
-    color: #2088d0;
-    padding: 25px;
-    height: 350px;
+  width: 30% !important;
+  border-radius: 2%;
+  text-align: center;
+  background-color: white;
+  color: #2088d0;
+  padding: 15px;
+  height: 200px;
+  font-size: 12px;
+  margin: 5%;
 }
 button {
-  border: 0;
+    border: 0;
     height: 50px;
     width: 100px;
     background-color: #2088d0;
     border-radius: 10%;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 a {
-  color: white;
-  font-size: 15px;
-  font-weight: 600;
-  font-family: Montserrat;
-  text-decoration: none;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    font-family: Montserrat;
+    text-decoration: none;
 }
 .art p{
-  margin-top: 50px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 15px;
+}
+img {
+    margin-left: 10%;
+    width: 300px;
+    height: 200px;
+}
+.forms{
+    padding: 100px;
+    background-color: white !important;
+    color: #2088d0 !important;
 }
 footer {
     display: flex;
@@ -79,5 +79,9 @@ footer {
     position: static;
 }
 i {
-  padding: 20px;
+    padding: 20px;
+}
+.terms {
+  color: #2088d0;
+  text-decoration: underline;
 }
