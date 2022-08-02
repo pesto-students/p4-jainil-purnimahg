@@ -1,0 +1,107 @@
+body {
+  margin: 0;
+}
+
+.content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  padding: 100px;
+  z-index: 1;
+}
+
+.box {
+  height: 100px;
+  width: 100px;
+  transition: transform;
+  transition-duration: 2s;
+  transition-timing-function: ease-in-out;
+}
+
+.text {
+  display: flex;
+  position: absolute;
+  padding: 100px;
+  height: 200px;
+  width: 200px;
+  z-index: 0;
+}
+
+h1 {
+  margin: auto;
+}
+
+.row1, .row2 {
+  display: flex;
+}
+
+.red {
+  background-color: red;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.green {
+  background-color: green;
+}
+
+/* Transition on hover */
+.content:hover .red {
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+
+.content:hover .yellow {
+  transform: rotate(-90deg);
+  transform-origin: top right;
+}
+
+.content:hover .blue {
+  transform: rotate(-90deg);
+  transform-origin: bottom left;
+}
+
+.content:hover .green {
+  transform: rotate(90deg);
+  transform-origin: bottom right;
+}
+
+/* Hover out transition */
+.content .red {
+  animation-name: close-uldr;
+  transform-origin: top left;
+}
+
+.content .yellow {
+  animation-name: close-urdl;
+  transform-origin: top right;
+}
+
+.content .blue {
+  animation-name: close-urdl;
+  transform-origin: bottom left;
+}
+
+.content .green {
+  animation-name: close-uldr;
+  transform-origin: bottom right;
+}
+
+/* Transition animation */
+@keyframe close-urdl {
+  from: transform: rotate(0deg);
+  to: transform: rotate(-90deg);
+}
+
+@keyframe close-uldr {
+  from: transform: rotate(0deg);
+  to: transform: rotate(90deg);
+}
