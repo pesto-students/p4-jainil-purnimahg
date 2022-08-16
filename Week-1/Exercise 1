@@ -1,0 +1,33 @@
+# Pesto_assignments
+
+Exercise 1.1:
+1.When a user enters an URL in the browser, how does the browser fetch the desired result ? 
+Explain this with the below in mind and Demonstrate this by drawing a diagramfor the same.(2-3hours)
+
+![image](https://user-images.githubusercontent.com/84613479/180461704-73d462f0-bdc1-4277-a972-15318d0fb55d.png)
+
+a.What is the main functionality of the browser?
+Renders HTML and CSS
+Browsers convert Hypertext Transfer Protocol (HTTP) web pages and websites into human-readable content.
+
+b.High Level Components of a browser.
+User Interface
+Browser Engine --> Data Persistence
+Rendering Engine:
+  Networking
+  JavaScript Interpreter
+  UI Backend
+
+c.Rendering engine and its use.
+Rendering Engine is the software that draws texts and images on the screen
+Blink, Gecko, EdgeHTML, WebKit
+
+d.Parsers (HTML, CSS, etc)
+The browser parses HTML into a DOM tree. HTML parsing involves tokenization and tree construction.
+Parsers are used to analyse and convert a program into an internal format that a runtime environment can run. 
+
+e.Script Processors
+The script processor executes Javascript code to process an event. There are two kinds of script processors client-side scripting, which is responsible for interactions within the webpage and server-side, which is  responsible for the completion or carrying out a task at the server-end and then sending the result to the client-end. 
+
+f.Tree construction
+![image](https://user-images.githubusercontent.com/84613479/180509046-ee968d18-c7c7-40d1-aed8-9e7daff344f1.png)
