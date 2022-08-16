@@ -1,1 +1,169 @@
+Exercise 3.1:
+Create a memoize function that remembers previous inputs and stores them in cache so that it won’t have to compute the same inputs more than once. The function will take an unspecified number of integer inputs and a reducer method. [1.5 hours]
+Answer:
+function memoizeFib(fn) { //Memoization function has been created
+	const cache = new Map(); //the cache object in terms of Map() as Map is a key-value pair but if you use as an object, you will not be able to use the keywords: .get .set ,etc.
+	return function (...args) { //We are assigning the memoize of a function to a const function, hence the declaration of memoize function, must return a function()
+		const key = args.toString(); //Passing the arguments as string
+		if (cache.has(key)) { //if there's a cache for args in terms of Strings
+			return cache.get(key); //get the cache for args in terms of Strings
+	  }
+    cache.set(key, fn(...args)); // when the cache is not yet present, we get all the arguments received
+		return cache.get(key); //and return the cache of the args in strings that is already present.
+  };
+}
+function fib(n) {
+	if (n < 2) {
+		return n;
+	}
+	return fib(n - 1) + fib(n - 2);
+}
+function time (fn) {
+	console.time();
+	fn();
+	console.timeEnd();
+}
+//introducing memoize function created to fib function
+const MemFib = memoizeFib(fib);
+//Logging the output of the fib function and the time each execution takes, with a comparison of how quicker the execution happens when the same input is provided, to demonstrate the importance of caching and efficiency of memoizing
+console.log(MemFib(38));
+time(() => MemFib(38)); 
+console.log(MemFib(42));
+time(() => MemFib(42)); 
+console.log(MemFib(12)); 
+time(() => MemFib(12));
+console.log(MemFib(42)); 
+time(() => MemFib(42));
+console.log(MemFib(38));
+time(() => MemFib(38));
+
+
+//OUTPUT:
+// 39088169
+// default: 0.146ms
+// 267914296
+// default: 0.087ms
+// 144
+// default: 0.048ms
+// 267914296
+// default: 0.039ms <- cached
+// 39088169
+// default: 0.16ms <- cached
+
+
+Exercise 3.2:
+Create 3 simple functions where call, bind and apply are used. The intention of this exercise is to understand how they work and their differences.(0.5 hours)
+Answer:
+/**********************************.bind ******************************/
+function add(a, b) {
+    return a + b;
+}
+const sum = add.bind(null,30); // Binding the b argument
+console.log(sum(40)); // The input is only for the other parameter, a
+// Output => 70
+
+console.log(sum(200,100)); // This is not going to have 100 for b variable, but ignore it and keep b as 30, since .bind is a permanent explicit binding.
+// Output => 230 and not 300
+
+//.bind demonstrated with the 'this' keyword
+function sumThis(x,y) {
+    return this.x + this.y; 
+}
+const SumT = sumThis.bind({x:10, y:30});
+console.log(SumT());
+// Output => 40
+const SumNewFunc = SumT.bind({x:55, y:110}); // When we try to bind an already bound variable, we can not over write on the bound vaues as they are permanent.
+console.log(SumNewFunc());
+// Output => 40 and not 165 demonstrating permanent binding property of .bind 
+
+
+/**********************************.call ******************************/
+
+function CustomerOrder(name){
+    var reply = [
+        name,
+        this.customer,
+        'would like a',
+        this.quantity,
+        this.dish,
+        'pizza with some',
+        this.sides,
+        'and',
+        this.extras
+    ].join(' ');
+    console.log(reply);
+}
+var Reeta = {
+    customer: 'Reeta', quantity: 'small', flavour: 'paneer tikka',  sides: 'jalapenos', extras: 'diet coke'
+};
+var Sam = {
+    customer: 'Sam', quantity: 'large', flavour: 'cheese burst',  sides: 'garlic breads', extras: 'orange juice'
+};
+var Purnima = {
+    customer: 'Purnima', quantity: 'small', flavour: 'margerita',  sides: 'prawns', extras: 'pepsi'
+};
+var Rohan = {
+    customer: 'Rohan', quantity: 'medium', flavour: 'veggie delight',  sides: 'mayonnaise', extras: 'thumbs up'
+};
+//The first parameter in .call is for the object which is going to passed as the 'this' keyword inside the function
+CustomerOrder.call(Reeta);
+CustomerOrder.call(Sam);
+CustomerOrder.call(Purnima);
+CustomerOrder.call(Rohan);
+
+//Output:
+// Reeta would like a small  pizza with some jalapenos and diet coke
+// Sam would like a large  pizza with some garlic breads and orange juice
+// Purnima would like a small  pizza with some prawns and pepsi
+// Rohan would like a medium  pizza with some mayonnaise and thumbs up
+
+
+/**********************************.after ******************************/
+
+var numbers = [5,6,7,20,100,70,89];
+var max = Math.max.apply(null, numbers);
+console.log(max);
+//Output: 100
+var min = Math.min.apply(null, numbers);
+console.log(min);
+//Output: 5
+
+Exercise 3.3:
+1. What is the output of the below problem and why: [ 30 min ]
+Answer:
+//Output for the question => Count is 0
+// For the folowing reasons:
+/*1. let message=`Count is ${count}`; <= this message string is being created 
+when the count is 0 and there is no updation happening after the incremement
+is done to the count variable, hence while passing message, we get the 
+output: Count is 0.*/
+/*2. console.log(message); <= if this was console.log(count) --> Output : 3 <-- 
+Because the count variable is being updated every time the implement() 
+function is being called.*/
+
+/*To get the Count as 3 through the message string itself, we can simply keep 
+the message assignment within the increment() function: */
+
+function createIncrement() {
+	let count = 0;
+	function increment() {
+		count++;
+		message = `Count is ${count}`;
+	}
+  function log() {
+	  console.log(message);
+  }
+  return [increment, log];
+}
+const [increment, log] = createIncrement();
+increment();
+increment();
+increment();
+log(); 
+// Output => Count is 3
+
+
+
+Exercise 3.4
+Refactor the above stack implementation, using the concept of closure, such that there is noway to access items array outside of createStack() function scope: (2-3 hours)
 
